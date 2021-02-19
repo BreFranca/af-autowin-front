@@ -6,17 +6,20 @@ import {
 const FormItem = Form.Item
 const { TextArea } = Input
 
-const LabelTextArea = ({
-    title,
-    disabled,
-    name,
-    placeholder,
-    onChange,
-    rows
-}) => {
+const LabelTextArea = (props) => {
+    const {
+        title,
+        name,
+        rules
+    } = props
+
     return (
-        <FormItem label={title} name={name}>
-            <TextArea disabled={disabled} rows={rows} onChange={onChange} placeholder={placeholder} />
+        <FormItem
+            label={title}
+            name={name}
+            rules={rules}
+        >
+            <TextArea {...props} />
         </FormItem>
     )
 }

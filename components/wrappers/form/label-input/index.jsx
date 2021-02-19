@@ -5,16 +5,20 @@ import {
 
 const FormItem = Form.Item
 
-const LabelInput = ({
-    title,
-    disabled,
-    name,
-    placeholder,
-    onChange
-}) => {
+const LabelInput = (props) => {
+    const {
+        title,
+        name,
+        rules
+    } = props
+
     return (
-        <FormItem label={title} name={name}>
-            <Input onChange={onChange} placeholder={placeholder} disabled={disabled} />
+        <FormItem
+            label={title}
+            name={name}
+            rules={rules}
+        >
+            <Input {...props} />
         </FormItem>
     )
 }

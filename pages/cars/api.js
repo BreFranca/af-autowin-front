@@ -9,14 +9,12 @@ export const getFipeTable = async ({ type, unit, brand, model, year }) => {
 
             const { data } = response
 
-            console.log(type)
-
-            if (type === 'models') {
+            if (type === 'brand') {
                 return data.modelos.map((car) => ({
                     text: car.nome,
                     value: car.codigo
                 }))
-            } else if (type === 'vehicle') {
+            } else if (type === 'year') {
                 return data
             } else {
                 return data.map((car) => ({

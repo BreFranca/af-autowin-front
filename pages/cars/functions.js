@@ -90,3 +90,16 @@ export const data = [
         yearFab: '2016'
     },
 ];
+
+export const getNextType = (type) => {
+    switch (type) {
+        case 'unit':
+            return 'brands'
+        case 'brand':
+            return 'models'
+        case 'model':
+            return 'years'
+        default:
+            return 'car'
+    }
+}
